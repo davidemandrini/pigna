@@ -1,34 +1,23 @@
 # -*- encoding: utf-8 -*-
 from enum import Enum
-
-staff = []
-shops = []
-shifts = []
-
-class Day(Enum):
-	MONDAY = (1, "Lunedì")
-	TUESDAY = (2, "Martedì")
-	#WEDNESDAY = (3, "Mercoledì")
-	#THURSDAY = (4, "Giovedì")
-	#FRIDAY = (5, "Venerdì")
-	#SATURDAY = (6, "Sabato")
-	#SUNDAY = (7, "Domenica")
-	def __str__(self):
-		return '{0}'.format(self.value[1])
+from commons import *
 
 class Person:
-	def __init__(self, name, lastname, min_h, max_h):
+	def __init__(self, name, min_h, max_h):
+		self.id = get_person_next_id()
 		self.name = name
-		self.lastname = lastname
 		self.min_h = min_h
 		self.max_h = max_h
 		self.availabilities = []
-		staff.append(self)
+		list_person.append(self)
+
 	def __str__(self):
-		return '{0} {1}'.format(self.name, self.lastname)
+		return '{0}'.format(self.name)
+
 	def addAvailability(self, day, shift):
 		av = Availability(day, shift)
 		self.availabilities.append(av)
+
 	def getAvailability(self, day, shift):
 		for av in self.availabilities:
 			if av.day == day and av.shift == shift:
@@ -36,24 +25,29 @@ class Person:
 		return 0
 
 class Shift:
-	def __init__(self, id, hours, name):
-		self.id = id
-		self.hours = hours
+	def __init__(self, length, name):
+		self.id =  get_shift_next_id()
+		self.length = length
 		self.name = name
-		shifts.append(self)
+		list_shift.append(self)
+
 	def __str__(self):
-		return '{0} ({1} ore)'.format(self.name, self.hours)
+		return '{0}'.format(self.name)
 
 class Shop:
 	def __init__(self, name):
+		self.id = get_shop_next_id()
 		self.name = name
 		self.presences = []
-		shops.append(self)
+		list_shop.append(self)
+
 	def __str__(self):
 		return '{0}'.format(self.name)
+
 	def setMinPresence(self, day, shift, value):
 		pr = Presence(day, shift, value)
 		self.presences.append(pr)
+
 	def getMinPresence(self, day, shift):
 		for presence in self.presences:
 			if presence.day == day and presence.shift == shift:
@@ -64,13 +58,17 @@ class Availability:
 	def __init__(self, day, shift):
 		self.day = day
 		self.shift = shift
+
 	def __str__(self):
-		return '{0} {1}'.format(self.day.value[1], self.shift.name)
+		return '{0} {1}'.format(self.day.ita(), self.shift.name)
 
 class Presence:
 	def __init__(self, day, shift, value):
 		self.day = day
 		self.shift = shift
 		self.value = value
+
 	def __str__(self):
-		return '{0} minimo {1} persone per il turno {2}'.format(self.day.value[1], self.value, self.shift.name)
+		return '{0} minimo {1} persone per il turno {2}'.format(self.day.ita(), self.value, self.shift.name)
+
+
