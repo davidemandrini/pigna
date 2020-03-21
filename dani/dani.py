@@ -10,7 +10,7 @@ person_dict = {p.id: p for p in list_person}
 variables = (day_dict.keys(), shift_dict.keys(), person_dict.keys())
 
 # Create the 'prob' variable to contain the problem data
-prob = LpProblem("Turni Dani", LpMinimize)
+prob = LpProblem("Turni_Dani", LpMinimize)
 var = LpVariable.dicts("var", variables, 0, 1, LpInteger)
 
 # The objective function is added to 'prob' first
@@ -61,53 +61,70 @@ for person_id in person_dict:
         prob += lpSum([var[day_id][shift_id][person_id] for shift_id in shift_dict]) \
                 <= 1, ""
 
-# The problem is solved using PuLP's choice of Solver
-prob.solve()
-
-# Get the status of the solution
-success = LpStatus[prob.status] == "Optimal"
-
 # Print problem variables
 printProblemVariables()
 
-# prepare structure for results
-res_turni = collections.OrderedDict()
-for day_id in day_dict:
-    res_turni[day_id] = collections.OrderedDict()
-    for shift_id in shift_dict:
-        res_turni[day_id][shift_id] = []
+max_sol = 1
+cur_sol = 0
 
-res_persone = collections.OrderedDict()
-for person_id in person_dict:
-    res_persone[person_id] = collections.OrderedDict()
-    for day_id in day_dict:
-        res_persone[person_id][day_id] = []
+while cur_sol <= max_sol:
 
-# Process results
-if success:
-    for v in prob.variables():
-        if v.varValue == 1:
-            day_id, shift_id, person_id = map(lambda x: int(x), v.name.split("_")[1:])
-            res_turni[day_id][shift_id].append(person_id)
-            res_persone[person_id][day_id].append(shift_id)
-else:
-    print("Non c'e' soluzione a questo problema...")
-    exit(1)
+    prob.solve()
 
-# Print results per day/shift
-print("\nTurni:")
-for day_id in res_turni:
-    print(f"-- {Days.LUNEDI.get(day_id).ita()}")
-    for shift_id in res_turni[day_id]:
-        print(f"\tTurno {shift_dict[shift_id].id}: {', '.join([person_dict[s].name for s in res_turni[day_id][shift_id]])}")
+    # The status of the solution is printed to the screen
+    print("Status:", LpStatus[prob.status])
 
-# Print results per person
-print("\nPer persona:")
-for person_id in res_persone:
-    tot = 0
-    print(f"-- {person_dict[person_id].name}")
-    for day_id in res_persone[person_id]:
-        curr_turni = [str(shift_dict[s].id) for s in res_persone[person_id][day_id]]
-        tot += len(curr_turni)
-        print(f"\t{day_dict[day_id].ita()} - turni: {', '.join(curr_turni)}")
-    print(f"\tTotale: {tot} turni")
+    # Get the status of the solution
+    success = LpStatus[prob.status] == "Optimal"
+
+    # The solution is printed if it was deemed "optimal" i.e met the constraints
+    if success:
+
+        # prepare structure for results
+        res_turni = collections.OrderedDict()
+        for day_id in day_dict:
+            res_turni[day_id] = collections.OrderedDict()
+            for shift_id in shift_dict:
+                res_turni[day_id][shift_id] = []
+
+        res_persone = collections.OrderedDict()
+        for person_id in person_dict:
+            res_persone[person_id] = collections.OrderedDict()
+            for day_id in day_dict:
+                res_persone[person_id][day_id] = []
+
+        # Process results
+        for v in prob.variables():
+            if v.varValue == 1:
+                day_id, shift_id, person_id = map(lambda x: int(x), v.name.split("_")[1:])
+                res_turni[day_id][shift_id].append(person_id)
+                res_persone[person_id][day_id].append(shift_id)
+
+        # Print results per day/shift
+        print("\nTurni:")
+        for day_id in res_turni:
+            print(f"-- {Days.LUNEDI.get(day_id).ita()}")
+            for shift_id in res_turni[day_id]:
+                print(
+                    f"\tTurno {shift_dict[shift_id].id}: {', '.join([person_dict[s].name for s in res_turni[day_id][shift_id]])}")
+
+        # Print results per person
+        print("\nPer persona:")
+        for person_id in res_persone:
+            tot = 0
+            print(f"-- {person_dict[person_id].name}")
+            for day_id in res_persone[person_id]:
+                curr_turni = [str(shift_dict[s].id) for s in res_persone[person_id][day_id]]
+                tot += len(curr_turni)
+                print(f"\t{day_dict[day_id].ita()} - turni: {', '.join(curr_turni)}")
+            print(f"\tTotale: {tot} turni")
+
+        # The constraint is added that the same solution cannot be returned again
+        prob += lpSum([var[day_id][shift_id][person_id]
+                       for day_id in day_dict for shift_id in shift_dict for person_id in person_dict
+                       if value(var[day_id][shift_id][person_id]) == 1]) <= 55 # (( 3 + 3 + 2 ) * 7 ) - 1
+
+        cur_sol += 1
+    # If a new optimal solution cannot be found, we end the program
+    else:
+        break
