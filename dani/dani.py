@@ -105,8 +105,7 @@ while cur_sol <= max_sol:
         for day_id in res_turni:
             print(f"-- {Days.LUNEDI.get(day_id).ita()}")
             for shift_id in res_turni[day_id]:
-                print(
-                    f"\tTurno {shift_dict[shift_id].id}: {', '.join([person_dict[s].name for s in res_turni[day_id][shift_id]])}")
+                print(f"\tTurno {shift_dict[shift_id].id}: {', '.join([person_dict[s].name for s in res_turni[day_id][shift_id]])}")
 
         # Print results per person
         print("\nPer persona:")
@@ -116,7 +115,8 @@ while cur_sol <= max_sol:
             for day_id in res_persone[person_id]:
                 curr_turni = [str(shift_dict[s].id) for s in res_persone[person_id][day_id]]
                 tot += len(curr_turni)
-                print(f"\t{day_dict[day_id].ita()} - turni: {', '.join(curr_turni)}")
+                if len(curr_turni) > 0:
+                    print(f"\t{day_dict[day_id].ita()} - turni: {', '.join(curr_turni)}")
             print(f"\tTotale: {tot} turni")
 
         # The constraint is added that the same solution cannot be returned again

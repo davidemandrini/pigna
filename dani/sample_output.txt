@@ -1,0 +1,619 @@
+
+Turni:
+ --- Turno: 1 - Durata: 8h - Nome: 07:00 - 15:00 - Min 3 persone - Max 3 persone
+ --- Turno: 2 - Durata: 8h - Nome: 15:00 - 23:00 - Min 3 persone - Max 3 persone
+ --- Turno: 3 - Durata: 8h - Nome: 23:00 - 07:00 - Min 2 persone - Max 2 persone
+
+Persone:
+ --- ID: 1 - Name: Operatore 0 - Min: 0h - Max: 40h 
+ --- ID: 2 - Name: Operatore 1 - Min: 0h - Max: 40h 
+ --- ID: 3 - Name: Operatore 2 - Min: 0h - Max: 40h 
+ --- ID: 4 - Name: Operatore 3 - Min: 0h - Max: 40h 
+ --- ID: 5 - Name: Operatore 4 - Min: 0h - Max: 40h 
+ --- ID: 6 - Name: Operatore 5 - Min: 0h - Max: 40h 
+ --- ID: 7 - Name: Operatore 6 - Min: 0h - Max: 40h 
+ --- ID: 8 - Name: Operatore 7 - Min: 0h - Max: 40h 
+ --- ID: 9 - Name: Operatore 8 - Min: 0h - Max: 40h 
+ --- ID: 10 - Name: Operatore 9 - Min: 0h - Max: 40h 
+ --- ID: 11 - Name: Operatore 10 - Min: 0h - Max: 40h 
+ --- ID: 12 - Name: Operatore 11 - Min: 0h - Max: 40h 
+ --- ID: 13 - Name: Operatore 12 - Min: 0h - Max: 40h 
+ --- ID: 14 - Name: Operatore 13 - Min: 0h - Max: 40h 
+ --- ID: 15 - Name: Operatore 14 - Min: 0h - Max: 40h 
+ --- ID: 16 - Name: Operatore 15 - Min: 0h - Max: 40h 
+
+Disponibilità:
+ --- Operatore 0 ha 21 disponibilità
+  |-   Turno 1 - Lunedì
+  |-   Turno 2 - Lunedì
+  |-   Turno 3 - Lunedì
+  |-   Turno 1 - Martedì
+  |-   Turno 2 - Martedì
+  |-   Turno 3 - Martedì
+  |-   Turno 1 - Mercoledì
+  |-   Turno 2 - Mercoledì
+  |-   Turno 3 - Mercoledì
+  |-   Turno 1 - Giovedì
+  |-   Turno 2 - Giovedì
+  |-   Turno 3 - Giovedì
+  |-   Turno 1 - Venerdì
+  |-   Turno 2 - Venerdì
+  |-   Turno 3 - Venerdì
+  |-   Turno 1 - Sabato
+  |-   Turno 2 - Sabato
+  |-   Turno 3 - Sabato
+  |-   Turno 1 - Domenica
+  |-   Turno 2 - Domenica
+  |-   Turno 3 - Domenica
+ --- Operatore 1 ha 21 disponibilità
+  |-   Turno 1 - Lunedì
+  |-   Turno 2 - Lunedì
+  |-   Turno 3 - Lunedì
+  |-   Turno 1 - Martedì
+  |-   Turno 2 - Martedì
+  |-   Turno 3 - Martedì
+  |-   Turno 1 - Mercoledì
+  |-   Turno 2 - Mercoledì
+  |-   Turno 3 - Mercoledì
+  |-   Turno 1 - Giovedì
+  |-   Turno 2 - Giovedì
+  |-   Turno 3 - Giovedì
+  |-   Turno 1 - Venerdì
+  |-   Turno 2 - Venerdì
+  |-   Turno 3 - Venerdì
+  |-   Turno 1 - Sabato
+  |-   Turno 2 - Sabato
+  |-   Turno 3 - Sabato
+  |-   Turno 1 - Domenica
+  |-   Turno 2 - Domenica
+  |-   Turno 3 - Domenica
+ --- Operatore 2 ha 21 disponibilità
+  |-   Turno 1 - Lunedì
+  |-   Turno 2 - Lunedì
+  |-   Turno 3 - Lunedì
+  |-   Turno 1 - Martedì
+  |-   Turno 2 - Martedì
+  |-   Turno 3 - Martedì
+  |-   Turno 1 - Mercoledì
+  |-   Turno 2 - Mercoledì
+  |-   Turno 3 - Mercoledì
+  |-   Turno 1 - Giovedì
+  |-   Turno 2 - Giovedì
+  |-   Turno 3 - Giovedì
+  |-   Turno 1 - Venerdì
+  |-   Turno 2 - Venerdì
+  |-   Turno 3 - Venerdì
+  |-   Turno 1 - Sabato
+  |-   Turno 2 - Sabato
+  |-   Turno 3 - Sabato
+  |-   Turno 1 - Domenica
+  |-   Turno 2 - Domenica
+  |-   Turno 3 - Domenica
+ --- Operatore 3 ha 21 disponibilità
+  |-   Turno 1 - Lunedì
+  |-   Turno 2 - Lunedì
+  |-   Turno 3 - Lunedì
+  |-   Turno 1 - Martedì
+  |-   Turno 2 - Martedì
+  |-   Turno 3 - Martedì
+  |-   Turno 1 - Mercoledì
+  |-   Turno 2 - Mercoledì
+  |-   Turno 3 - Mercoledì
+  |-   Turno 1 - Giovedì
+  |-   Turno 2 - Giovedì
+  |-   Turno 3 - Giovedì
+  |-   Turno 1 - Venerdì
+  |-   Turno 2 - Venerdì
+  |-   Turno 3 - Venerdì
+  |-   Turno 1 - Sabato
+  |-   Turno 2 - Sabato
+  |-   Turno 3 - Sabato
+  |-   Turno 1 - Domenica
+  |-   Turno 2 - Domenica
+  |-   Turno 3 - Domenica
+ --- Operatore 4 ha 21 disponibilità
+  |-   Turno 1 - Lunedì
+  |-   Turno 2 - Lunedì
+  |-   Turno 3 - Lunedì
+  |-   Turno 1 - Martedì
+  |-   Turno 2 - Martedì
+  |-   Turno 3 - Martedì
+  |-   Turno 1 - Mercoledì
+  |-   Turno 2 - Mercoledì
+  |-   Turno 3 - Mercoledì
+  |-   Turno 1 - Giovedì
+  |-   Turno 2 - Giovedì
+  |-   Turno 3 - Giovedì
+  |-   Turno 1 - Venerdì
+  |-   Turno 2 - Venerdì
+  |-   Turno 3 - Venerdì
+  |-   Turno 1 - Sabato
+  |-   Turno 2 - Sabato
+  |-   Turno 3 - Sabato
+  |-   Turno 1 - Domenica
+  |-   Turno 2 - Domenica
+  |-   Turno 3 - Domenica
+ --- Operatore 5 ha 21 disponibilità
+  |-   Turno 1 - Lunedì
+  |-   Turno 2 - Lunedì
+  |-   Turno 3 - Lunedì
+  |-   Turno 1 - Martedì
+  |-   Turno 2 - Martedì
+  |-   Turno 3 - Martedì
+  |-   Turno 1 - Mercoledì
+  |-   Turno 2 - Mercoledì
+  |-   Turno 3 - Mercoledì
+  |-   Turno 1 - Giovedì
+  |-   Turno 2 - Giovedì
+  |-   Turno 3 - Giovedì
+  |-   Turno 1 - Venerdì
+  |-   Turno 2 - Venerdì
+  |-   Turno 3 - Venerdì
+  |-   Turno 1 - Sabato
+  |-   Turno 2 - Sabato
+  |-   Turno 3 - Sabato
+  |-   Turno 1 - Domenica
+  |-   Turno 2 - Domenica
+  |-   Turno 3 - Domenica
+ --- Operatore 6 ha 21 disponibilità
+  |-   Turno 1 - Lunedì
+  |-   Turno 2 - Lunedì
+  |-   Turno 3 - Lunedì
+  |-   Turno 1 - Martedì
+  |-   Turno 2 - Martedì
+  |-   Turno 3 - Martedì
+  |-   Turno 1 - Mercoledì
+  |-   Turno 2 - Mercoledì
+  |-   Turno 3 - Mercoledì
+  |-   Turno 1 - Giovedì
+  |-   Turno 2 - Giovedì
+  |-   Turno 3 - Giovedì
+  |-   Turno 1 - Venerdì
+  |-   Turno 2 - Venerdì
+  |-   Turno 3 - Venerdì
+  |-   Turno 1 - Sabato
+  |-   Turno 2 - Sabato
+  |-   Turno 3 - Sabato
+  |-   Turno 1 - Domenica
+  |-   Turno 2 - Domenica
+  |-   Turno 3 - Domenica
+ --- Operatore 7 ha 21 disponibilità
+  |-   Turno 1 - Lunedì
+  |-   Turno 2 - Lunedì
+  |-   Turno 3 - Lunedì
+  |-   Turno 1 - Martedì
+  |-   Turno 2 - Martedì
+  |-   Turno 3 - Martedì
+  |-   Turno 1 - Mercoledì
+  |-   Turno 2 - Mercoledì
+  |-   Turno 3 - Mercoledì
+  |-   Turno 1 - Giovedì
+  |-   Turno 2 - Giovedì
+  |-   Turno 3 - Giovedì
+  |-   Turno 1 - Venerdì
+  |-   Turno 2 - Venerdì
+  |-   Turno 3 - Venerdì
+  |-   Turno 1 - Sabato
+  |-   Turno 2 - Sabato
+  |-   Turno 3 - Sabato
+  |-   Turno 1 - Domenica
+  |-   Turno 2 - Domenica
+  |-   Turno 3 - Domenica
+ --- Operatore 8 ha 21 disponibilità
+  |-   Turno 1 - Lunedì
+  |-   Turno 2 - Lunedì
+  |-   Turno 3 - Lunedì
+  |-   Turno 1 - Martedì
+  |-   Turno 2 - Martedì
+  |-   Turno 3 - Martedì
+  |-   Turno 1 - Mercoledì
+  |-   Turno 2 - Mercoledì
+  |-   Turno 3 - Mercoledì
+  |-   Turno 1 - Giovedì
+  |-   Turno 2 - Giovedì
+  |-   Turno 3 - Giovedì
+  |-   Turno 1 - Venerdì
+  |-   Turno 2 - Venerdì
+  |-   Turno 3 - Venerdì
+  |-   Turno 1 - Sabato
+  |-   Turno 2 - Sabato
+  |-   Turno 3 - Sabato
+  |-   Turno 1 - Domenica
+  |-   Turno 2 - Domenica
+  |-   Turno 3 - Domenica
+ --- Operatore 9 ha 21 disponibilità
+  |-   Turno 1 - Lunedì
+  |-   Turno 2 - Lunedì
+  |-   Turno 3 - Lunedì
+  |-   Turno 1 - Martedì
+  |-   Turno 2 - Martedì
+  |-   Turno 3 - Martedì
+  |-   Turno 1 - Mercoledì
+  |-   Turno 2 - Mercoledì
+  |-   Turno 3 - Mercoledì
+  |-   Turno 1 - Giovedì
+  |-   Turno 2 - Giovedì
+  |-   Turno 3 - Giovedì
+  |-   Turno 1 - Venerdì
+  |-   Turno 2 - Venerdì
+  |-   Turno 3 - Venerdì
+  |-   Turno 1 - Sabato
+  |-   Turno 2 - Sabato
+  |-   Turno 3 - Sabato
+  |-   Turno 1 - Domenica
+  |-   Turno 2 - Domenica
+  |-   Turno 3 - Domenica
+ --- Operatore 10 ha 21 disponibilità
+  |-   Turno 1 - Lunedì
+  |-   Turno 2 - Lunedì
+  |-   Turno 3 - Lunedì
+  |-   Turno 1 - Martedì
+  |-   Turno 2 - Martedì
+  |-   Turno 3 - Martedì
+  |-   Turno 1 - Mercoledì
+  |-   Turno 2 - Mercoledì
+  |-   Turno 3 - Mercoledì
+  |-   Turno 1 - Giovedì
+  |-   Turno 2 - Giovedì
+  |-   Turno 3 - Giovedì
+  |-   Turno 1 - Venerdì
+  |-   Turno 2 - Venerdì
+  |-   Turno 3 - Venerdì
+  |-   Turno 1 - Sabato
+  |-   Turno 2 - Sabato
+  |-   Turno 3 - Sabato
+  |-   Turno 1 - Domenica
+  |-   Turno 2 - Domenica
+  |-   Turno 3 - Domenica
+ --- Operatore 11 ha 21 disponibilità
+  |-   Turno 1 - Lunedì
+  |-   Turno 2 - Lunedì
+  |-   Turno 3 - Lunedì
+  |-   Turno 1 - Martedì
+  |-   Turno 2 - Martedì
+  |-   Turno 3 - Martedì
+  |-   Turno 1 - Mercoledì
+  |-   Turno 2 - Mercoledì
+  |-   Turno 3 - Mercoledì
+  |-   Turno 1 - Giovedì
+  |-   Turno 2 - Giovedì
+  |-   Turno 3 - Giovedì
+  |-   Turno 1 - Venerdì
+  |-   Turno 2 - Venerdì
+  |-   Turno 3 - Venerdì
+  |-   Turno 1 - Sabato
+  |-   Turno 2 - Sabato
+  |-   Turno 3 - Sabato
+  |-   Turno 1 - Domenica
+  |-   Turno 2 - Domenica
+  |-   Turno 3 - Domenica
+ --- Operatore 12 ha 21 disponibilità
+  |-   Turno 1 - Lunedì
+  |-   Turno 2 - Lunedì
+  |-   Turno 3 - Lunedì
+  |-   Turno 1 - Martedì
+  |-   Turno 2 - Martedì
+  |-   Turno 3 - Martedì
+  |-   Turno 1 - Mercoledì
+  |-   Turno 2 - Mercoledì
+  |-   Turno 3 - Mercoledì
+  |-   Turno 1 - Giovedì
+  |-   Turno 2 - Giovedì
+  |-   Turno 3 - Giovedì
+  |-   Turno 1 - Venerdì
+  |-   Turno 2 - Venerdì
+  |-   Turno 3 - Venerdì
+  |-   Turno 1 - Sabato
+  |-   Turno 2 - Sabato
+  |-   Turno 3 - Sabato
+  |-   Turno 1 - Domenica
+  |-   Turno 2 - Domenica
+  |-   Turno 3 - Domenica
+ --- Operatore 13 ha 21 disponibilità
+  |-   Turno 1 - Lunedì
+  |-   Turno 2 - Lunedì
+  |-   Turno 3 - Lunedì
+  |-   Turno 1 - Martedì
+  |-   Turno 2 - Martedì
+  |-   Turno 3 - Martedì
+  |-   Turno 1 - Mercoledì
+  |-   Turno 2 - Mercoledì
+  |-   Turno 3 - Mercoledì
+  |-   Turno 1 - Giovedì
+  |-   Turno 2 - Giovedì
+  |-   Turno 3 - Giovedì
+  |-   Turno 1 - Venerdì
+  |-   Turno 2 - Venerdì
+  |-   Turno 3 - Venerdì
+  |-   Turno 1 - Sabato
+  |-   Turno 2 - Sabato
+  |-   Turno 3 - Sabato
+  |-   Turno 1 - Domenica
+  |-   Turno 2 - Domenica
+  |-   Turno 3 - Domenica
+ --- Operatore 14 ha 21 disponibilità
+  |-   Turno 1 - Lunedì
+  |-   Turno 2 - Lunedì
+  |-   Turno 3 - Lunedì
+  |-   Turno 1 - Martedì
+  |-   Turno 2 - Martedì
+  |-   Turno 3 - Martedì
+  |-   Turno 1 - Mercoledì
+  |-   Turno 2 - Mercoledì
+  |-   Turno 3 - Mercoledì
+  |-   Turno 1 - Giovedì
+  |-   Turno 2 - Giovedì
+  |-   Turno 3 - Giovedì
+  |-   Turno 1 - Venerdì
+  |-   Turno 2 - Venerdì
+  |-   Turno 3 - Venerdì
+  |-   Turno 1 - Sabato
+  |-   Turno 2 - Sabato
+  |-   Turno 3 - Sabato
+  |-   Turno 1 - Domenica
+  |-   Turno 2 - Domenica
+  |-   Turno 3 - Domenica
+ --- Operatore 15 ha 21 disponibilità
+  |-   Turno 1 - Lunedì
+  |-   Turno 2 - Lunedì
+  |-   Turno 3 - Lunedì
+  |-   Turno 1 - Martedì
+  |-   Turno 2 - Martedì
+  |-   Turno 3 - Martedì
+  |-   Turno 1 - Mercoledì
+  |-   Turno 2 - Mercoledì
+  |-   Turno 3 - Mercoledì
+  |-   Turno 1 - Giovedì
+  |-   Turno 2 - Giovedì
+  |-   Turno 3 - Giovedì
+  |-   Turno 1 - Venerdì
+  |-   Turno 2 - Venerdì
+  |-   Turno 3 - Venerdì
+  |-   Turno 1 - Sabato
+  |-   Turno 2 - Sabato
+  |-   Turno 3 - Sabato
+  |-   Turno 1 - Domenica
+  |-   Turno 2 - Domenica
+  |-   Turno 3 - Domenica
+Status: Optimal
+
+Turni:
+-- Lunedì
+	Turno 1: Operatore 10, Operatore 4, Operatore 6
+	Turno 2: Operatore 11, Operatore 12, Operatore 3
+	Turno 3: Operatore 0, Operatore 14
+-- Martedì
+	Turno 1: Operatore 10, Operatore 11, Operatore 12
+	Turno 2: Operatore 13, Operatore 6, Operatore 7
+	Turno 3: Operatore 9, Operatore 15
+-- Mercoledì
+	Turno 1: Operatore 11, Operatore 2, Operatore 6
+	Turno 2: Operatore 0, Operatore 9, Operatore 3
+	Turno 3: Operatore 15, Operatore 7
+-- Giovedì
+	Turno 1: Operatore 0, Operatore 11, Operatore 15
+	Turno 2: Operatore 9, Operatore 4, Operatore 5
+	Turno 3: Operatore 12, Operatore 6
+-- Venerdì
+	Turno 1: Operatore 14, Operatore 15, Operatore 1
+	Turno 2: Operatore 12, Operatore 4, Operatore 8
+	Turno 3: Operatore 2, Operatore 7
+-- Sabato
+	Turno 1: Operatore 0, Operatore 9, Operatore 10
+	Turno 2: Operatore 15, Operatore 1, Operatore 3
+	Turno 3: Operatore 7, Operatore 8
+-- Domenica
+	Turno 1: Operatore 0, Operatore 9, Operatore 11
+	Turno 2: Operatore 10, Operatore 12, Operatore 13
+	Turno 3: Operatore 14, Operatore 5
+
+Per persona:
+-- Operatore 0
+	Lunedì - turni: 3
+	Mercoledì - turni: 2
+	Giovedì - turni: 1
+	Sabato - turni: 1
+	Domenica - turni: 1
+	Totale: 5 turni
+-- Operatore 1
+	Venerdì - turni: 1
+	Sabato - turni: 2
+	Totale: 2 turni
+-- Operatore 2
+	Mercoledì - turni: 1
+	Venerdì - turni: 3
+	Totale: 2 turni
+-- Operatore 3
+	Lunedì - turni: 2
+	Mercoledì - turni: 2
+	Sabato - turni: 2
+	Totale: 3 turni
+-- Operatore 4
+	Lunedì - turni: 1
+	Giovedì - turni: 2
+	Venerdì - turni: 2
+	Totale: 3 turni
+-- Operatore 5
+	Giovedì - turni: 2
+	Domenica - turni: 3
+	Totale: 2 turni
+-- Operatore 6
+	Lunedì - turni: 1
+	Martedì - turni: 2
+	Mercoledì - turni: 1
+	Giovedì - turni: 3
+	Totale: 4 turni
+-- Operatore 7
+	Martedì - turni: 2
+	Mercoledì - turni: 3
+	Venerdì - turni: 3
+	Sabato - turni: 3
+	Totale: 4 turni
+-- Operatore 8
+	Venerdì - turni: 2
+	Sabato - turni: 3
+	Totale: 2 turni
+-- Operatore 9
+	Martedì - turni: 3
+	Mercoledì - turni: 2
+	Giovedì - turni: 2
+	Sabato - turni: 1
+	Domenica - turni: 1
+	Totale: 5 turni
+-- Operatore 10
+	Lunedì - turni: 1
+	Martedì - turni: 1
+	Sabato - turni: 1
+	Domenica - turni: 2
+	Totale: 4 turni
+-- Operatore 11
+	Lunedì - turni: 2
+	Martedì - turni: 1
+	Mercoledì - turni: 1
+	Giovedì - turni: 1
+	Domenica - turni: 1
+	Totale: 5 turni
+-- Operatore 12
+	Lunedì - turni: 2
+	Martedì - turni: 1
+	Giovedì - turni: 3
+	Venerdì - turni: 2
+	Domenica - turni: 2
+	Totale: 5 turni
+-- Operatore 13
+	Martedì - turni: 2
+	Domenica - turni: 2
+	Totale: 2 turni
+-- Operatore 14
+	Lunedì - turni: 3
+	Venerdì - turni: 1
+	Domenica - turni: 3
+	Totale: 3 turni
+-- Operatore 15
+	Martedì - turni: 3
+	Mercoledì - turni: 3
+	Giovedì - turni: 1
+	Venerdì - turni: 1
+	Sabato - turni: 2
+	Totale: 5 turni
+Status: Optimal
+
+Turni:
+-- Lunedì
+	Turno 1: Operatore 10, Operatore 4, Operatore 6
+	Turno 2: Operatore 11, Operatore 12, Operatore 3
+	Turno 3: Operatore 0, Operatore 14
+-- Martedì
+	Turno 1: Operatore 11, Operatore 12, Operatore 14
+	Turno 2: Operatore 10, Operatore 6, Operatore 7
+	Turno 3: Operatore 9, Operatore 15
+-- Mercoledì
+	Turno 1: Operatore 11, Operatore 2, Operatore 6
+	Turno 2: Operatore 0, Operatore 9, Operatore 3
+	Turno 3: Operatore 15, Operatore 7
+-- Giovedì
+	Turno 1: Operatore 0, Operatore 11, Operatore 15
+	Turno 2: Operatore 9, Operatore 4, Operatore 5
+	Turno 3: Operatore 12, Operatore 6
+-- Venerdì
+	Turno 1: Operatore 14, Operatore 15, Operatore 1
+	Turno 2: Operatore 12, Operatore 4, Operatore 8
+	Turno 3: Operatore 2, Operatore 7
+-- Sabato
+	Turno 1: Operatore 0, Operatore 9, Operatore 10
+	Turno 2: Operatore 15, Operatore 1, Operatore 3
+	Turno 3: Operatore 7, Operatore 8
+-- Domenica
+	Turno 1: Operatore 0, Operatore 9, Operatore 11
+	Turno 2: Operatore 10, Operatore 12, Operatore 13
+	Turno 3: Operatore 14, Operatore 5
+
+Per persona:
+-- Operatore 0
+	Lunedì - turni: 3
+	Mercoledì - turni: 2
+	Giovedì - turni: 1
+	Sabato - turni: 1
+	Domenica - turni: 1
+	Totale: 5 turni
+-- Operatore 1
+	Venerdì - turni: 1
+	Sabato - turni: 2
+	Totale: 2 turni
+-- Operatore 2
+	Mercoledì - turni: 1
+	Venerdì - turni: 3
+	Totale: 2 turni
+-- Operatore 3
+	Lunedì - turni: 2
+	Mercoledì - turni: 2
+	Sabato - turni: 2
+	Totale: 3 turni
+-- Operatore 4
+	Lunedì - turni: 1
+	Giovedì - turni: 2
+	Venerdì - turni: 2
+	Totale: 3 turni
+-- Operatore 5
+	Giovedì - turni: 2
+	Domenica - turni: 3
+	Totale: 2 turni
+-- Operatore 6
+	Lunedì - turni: 1
+	Martedì - turni: 2
+	Mercoledì - turni: 1
+	Giovedì - turni: 3
+	Totale: 4 turni
+-- Operatore 7
+	Martedì - turni: 2
+	Mercoledì - turni: 3
+	Venerdì - turni: 3
+	Sabato - turni: 3
+	Totale: 4 turni
+-- Operatore 8
+	Venerdì - turni: 2
+	Sabato - turni: 3
+	Totale: 2 turni
+-- Operatore 9
+	Martedì - turni: 3
+	Mercoledì - turni: 2
+	Giovedì - turni: 2
+	Sabato - turni: 1
+	Domenica - turni: 1
+	Totale: 5 turni
+-- Operatore 10
+	Lunedì - turni: 1
+	Martedì - turni: 2
+	Sabato - turni: 1
+	Domenica - turni: 2
+	Totale: 4 turni
+-- Operatore 11
+	Lunedì - turni: 2
+	Martedì - turni: 1
+	Mercoledì - turni: 1
+	Giovedì - turni: 1
+	Domenica - turni: 1
+	Totale: 5 turni
+-- Operatore 12
+	Lunedì - turni: 2
+	Martedì - turni: 1
+	Giovedì - turni: 3
+	Venerdì - turni: 2
+	Domenica - turni: 2
+	Totale: 5 turni
+-- Operatore 13
+	Domenica - turni: 2
+	Totale: 1 turni
+-- Operatore 14
+	Lunedì - turni: 3
+	Martedì - turni: 1
+	Venerdì - turni: 1
+	Domenica - turni: 3
+	Totale: 4 turni
+-- Operatore 15
+	Martedì - turni: 3
+	Mercoledì - turni: 3
+	Giovedì - turni: 1
+	Venerdì - turni: 1
+	Sabato - turni: 2
+	Totale: 5 turni
