@@ -67,7 +67,7 @@ printProblemVariables()
 max_sol = 1
 cur_sol = 0
 
-while cur_sol <= max_sol:
+while cur_sol < max_sol:
 
     prob.solve()
 
