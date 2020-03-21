@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 from enum import Enum
 from commons import *
+import math
 
 
 class Person:
@@ -38,6 +39,16 @@ class Shift:
     def __str__(self):
         return f"Turno: {self.id} - Durata: {self.length}h - Nome: {self.name} - Min {self.min_p} persone - Max {self.max_p} persone"
 
+    def get_next(self, day_id, step=1, num_shifts=3):
+        next_shift = ((self.id - 1 + step) % num_shifts) + 1
+        delta_day = 0
+        rr = range(self.id + 1, self.id + 1 + step)
+        #print(list(rr))
+        for i in rr:
+            if i % num_shifts == 1:
+                delta_day += 1
+        next_day = ((day_id - 1 + delta_day) % 7 ) + 1
+        return (next_shift, next_day)
 
 class Availability:
     def __init__(self, day, shift):

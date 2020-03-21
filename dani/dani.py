@@ -3,9 +3,9 @@ from pulp import *
 from problem_variables import *
 import collections
 
-day_dict = {d.id(): d for d in Days}
-shift_dict = {s.id: s for s in list_shift}
-person_dict = {p.id: p for p in list_person}
+day_dict    = collections.OrderedDict({d.id(): d for d in Days})
+shift_dict  = collections.OrderedDict({s.id  : s for s in list_shift})
+person_dict = collections.OrderedDict({p.id  : p for p in list_person})
 
 variables = (day_dict.keys(), shift_dict.keys(), person_dict.keys())
 
@@ -61,13 +61,48 @@ for person_id in person_dict:
         prob += lpSum([var[day_id][shift_id][person_id] for shift_id in shift_dict]) \
                 <= 1, ""
 
+# 8. Ogni lavoratore ha un break di almeno 2 shifts
+for person_id in person_dict:
+    for day_id in day_dict:
+        for shift_id in shift_dict:
+            next1_shift_id, next1_day_id = shift_dict[shift_id].get_next(day_id, step=1, num_shifts=3)
+            next2_shift_id, next2_day_id = shift_dict[shift_id].get_next(day_id, step=2, num_shifts=3)
+            zipped = zip([shift_id, next1_shift_id, next2_shift_id], [day_id, next1_day_id, next2_day_id])
+            #print("(shift, day)")
+            #print(list(zipped))
+            try:
+                #print([var[d][s][person_id] for (s, d) in zipped])
+                prob += lpSum([var[d][s][person_id] for (s, d) in zipped])\
+                        <= 1, ""
+            except KeyError:
+                print("pers", person_id, "day", day_id, "shift", shift_id)
+                print("next shift", next1_shift_id, "next_day", next1_day_id)
+                print("next shift", next2_shift_id, "next_day", next2_day_id)
+                print("(shift, day)")
+                print(list(zipped))
+                break
+
 # Print problem variables
 printProblemVariables()
 
-max_sol = 1
-cur_sol = 0
+def check_min_break(res_persone, n_shifts=3):
+    tot_invalid = 0
+    for person_id in res_persone:
+        for day_id in res_persone[person_id]:
+            cur_day_shift = res_persone[person_id][day_id]
+            prev_day_shift = res_persone[person_id].get(day_id-1, None)
+            if prev_day_shift and len(prev_day_shift) > 0 and len(cur_day_shift) > 0:
+                # we have a previous day shift, so we need to check the distance
+                if cur_day_shift[0]+3 - prev_day_shift[0] < n_shifts:
+                    print(Days.LUNEDI.get(day_id - 1), prev_day_shift, Days.LUNEDI.get(day_id), cur_day_shift)
+                    print("Invalid: ", person_dict[person_id].name, str(res_persone[person_id]))
+                    tot_invalid += 1
+    return True if tot_invalid <= 0 else False
 
-while cur_sol < max_sol:
+max_valid_sol = 2
+count_valid_sol = 0
+
+while True:
 
     prob.solve()
 
@@ -100,31 +135,50 @@ while cur_sol < max_sol:
                 res_turni[day_id][shift_id].append(person_id)
                 res_persone[person_id][day_id].append(shift_id)
 
-        # Print results per day/shift
-        print("\nTurni:")
-        for day_id in res_turni:
-            print(f"-- {Days.LUNEDI.get(day_id).ita()}")
-            for shift_id in res_turni[day_id]:
-                print(f"\tTurno {shift_dict[shift_id].id}: {', '.join([person_dict[s].name for s in res_turni[day_id][shift_id]])}")
+        # can't work twice in a moving windows of 3 shifts
+        valid_sol = check_min_break(res_persone, n_shifts=3)
 
-        # Print results per person
-        print("\nPer persona:")
-        for person_id in res_persone:
-            tot = 0
-            print(f"-- {person_dict[person_id].name}")
-            for day_id in res_persone[person_id]:
-                curr_turni = [str(shift_dict[s].id) for s in res_persone[person_id][day_id]]
-                tot += len(curr_turni)
-                if len(curr_turni) > 0:
-                    print(f"\t{day_dict[day_id].ita()} - turni: {', '.join(curr_turni)}")
-            print(f"\tTotale: {tot} turni")
+        if not valid_sol:
+            print("Invalid solution found, check with Davide")
+            break
 
-        # The constraint is added that the same solution cannot be returned again
-        prob += lpSum([var[day_id][shift_id][person_id]
-                       for day_id in day_dict for shift_id in shift_dict for person_id in person_dict
-                       if value(var[day_id][shift_id][person_id]) == 1]) <= 55 # (( 3 + 3 + 2 ) * 7 ) - 1
+        else:
+            print("Valid solution found!")
 
-        cur_sol += 1
+            # Print results per day/shift
+            print("\nTurni:")
+            for day_id in res_turni:
+                print(f"-- {Days.LUNEDI.get(day_id).ita()}")
+                for shift_id in res_turni[day_id]:
+                    print(
+                        f"\tTurno {shift_dict[shift_id].name}: {', '.join([person_dict[s].name for s in res_turni[day_id][shift_id]])}")
+
+            # Print results per person
+            print("\nPer persona:")
+            for person_id in res_persone:
+                tot = 0
+                print(f"-- {person_dict[person_id].name}")
+                for day_id in res_persone[person_id]:
+                    curr_turni = [str(shift_dict[s].name) for s in res_persone[person_id][day_id]]
+                    tot += len(curr_turni)
+                    if len(curr_turni) > 0:
+                        print(f"\t{day_dict[day_id].ita()} - turni: {', '.join(curr_turni)}")
+                print(f"\tTotale: {tot} turni")
+
+            # Add constraint in case we want to compute a further solution
+            prob += lpSum([var[day_id][shift_id][person_id]
+                           for day_id in day_dict for shift_id in shift_dict for person_id in person_dict
+                           if value(var[day_id][shift_id][person_id]) == 1]) <= 55  #  <= (( 3 + 3 + 2 ) * 7 ) - 1
+
+            # a valid solution has been found, we increment the count of valid solutions
+            count_valid_sol += 1
+            if count_valid_sol >= max_valid_sol:
+                print("Found the max number of valid solutions")
+                break
+
     # If a new optimal solution cannot be found, we end the program
     else:
+        print("Cannot find an optimal solution anymore")
         break
+
+

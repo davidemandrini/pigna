@@ -56,4 +56,4 @@ def printProblemVariables():
     for person in list_person:
         print(" --- {0} ha {1} disponibilità".format(person.name, len(person.availabilities)))
         for availability in person.availabilities:
-            print("  |-   Turno {0} - {1}".format(availability.shift.id, availability.day.ita()))
+            print("  |-   {0} - Turno {1}".format(availability.day.ita(), availability.shift.name))
